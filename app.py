@@ -298,7 +298,7 @@ def update_stats():
         rrunning_stats['Offlane Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Offlane']/5)**3)
 
 
-    enemy_role_reqs = pd.read_csv('/content/Copy of Whisper Drafter -6.0 - Player Comforts.csv')
+    enemy_role_reqs = pd.read_csv('/Copy of Whisper Drafter -6.0 - Enemy Comforts.csv')
 
     #running_stats['Pairing Score'] = [b1, b2, b3, b4, b5]
     bps[0] = running_stats.sort_values(by='Healer Score', ascending=False)['Hero Name'].iloc[:5].tolist()
