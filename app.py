@@ -3,9 +3,9 @@ import streamlit as st
 import pandas as pd
 import random 
 
-stats = pd.read_csv('/content/Copy of Whisper Drafter -6.0 - hero_stats (1).csv')
-comforts = pd.read_csv('/content/Copy of Whisper Drafter -6.0 - Player Comforts (4).csv')
-matchups = pd.read_csv('/content/Copy of Whisper Drafter -6.0 - hero_data.csv')
+stats = pd.read_csv('Copy of Whisper Drafter -6.0 - hero_stats (1).csv')
+comforts = pd.read_csv('Copy of Whisper Drafter -6.0 - Player Comforts (4).csv')
+matchups = pd.read_csv('Copy of Whisper Drafter -6.0 - hero_data.csv')
 
 # Convert Series to List and insert 'Default' at the start
 column_names = ["Hero0", "Hero1", "Hero2", "Hero3", "Hero4"]
@@ -414,7 +414,7 @@ def get_bot_pick():
       rrunning_stats['Flex Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Flex']/5)**3)
       rrunning_stats['Offlane Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Offlane']/5)**3)
 
-    enemy_role_reqs = pd.read_csv('/content/Copy of Whisper Drafter -6.0 - Enemy Comforts (4).csv')
+    enemy_role_reqs = pd.read_csv('Copy of Whisper Drafter -6.0 - Enemy Comforts (4).csv')
 
     r_healer = 10-enemy_role_reqs[enemy_role_reqs['Hero Name'].isin([r1,r2,r3,r4,r5])]['Healer'].sum()
     r_tank = 13-enemy_role_reqs[enemy_role_reqs['Hero Name'].isin([r1,r2,r3,r4,r5])]['Tank'].sum()
