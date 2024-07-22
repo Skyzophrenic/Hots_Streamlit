@@ -298,7 +298,7 @@ def update_stats():
         rrunning_stats['Offlane Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Offlane']/5)**3)
 
 
-    enemy_role_reqs = pd.read_csv('Copy of Whisper Drafter -6.0 - Enemy Comforts.csv')
+    enemy_role_reqs = pd.read_csv('Copy of Whisper Drafter -6.0 - Enemy Comforts (5).csv')
 
     #running_stats['Pairing Score'] = [b1, b2, b3, b4, b5]
     bps[0] = running_stats.sort_values(by='Healer Score', ascending=False)['Hero Name'].iloc[:5].tolist()
@@ -414,7 +414,7 @@ def get_bot_pick():
       rrunning_stats['Flex Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Flex']/5)**3)
       rrunning_stats['Offlane Score'] = rrunning_stats['Stats Totals'] * ((rrunning_stats['Offlane']/5)**3)
 
-    enemy_role_reqs = pd.read_csv('Copy of Whisper Drafter -6.0 - Enemy Comforts (4).csv')
+    enemy_role_reqs = pd.read_csv('Copy of Whisper Drafter -6.0 - Enemy Comforts (5).csv')
 
     r_healer = 10-enemy_role_reqs[enemy_role_reqs['Hero Name'].isin([r1,r2,r3,r4,r5])]['Healer'].sum()
     r_tank = 13-enemy_role_reqs[enemy_role_reqs['Hero Name'].isin([r1,r2,r3,r4,r5])]['Tank'].sum()
