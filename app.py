@@ -423,11 +423,11 @@ def get_bot_pick():
     r_offlane = 13-enemy_role_reqs[enemy_role_reqs['Hero Name'].isin([r1,r2,r3,r4,r5])]['Offlane'].sum()
     roles = [r_healer, r_tank, r_ranged, r_flex, r_offlane]
 
-    r_healer_s = (r_healer - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1
-    r_tank_s = (r_tank - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1
-    r_ranged_s = (r_ranged - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1
-    r_flex_s = (r_flex - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1
-    r_offlane_s = (r_offlane - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1
+    r_healer_s = ((r_healer - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1)**0.5
+    r_tank_s = ((r_tank - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1)**0.5
+    r_ranged_s = ((r_ranged - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1)**0.5
+    r_flex_s = ((r_flex - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1)**0.5
+    r_offlane_s = ((r_offlane - min(roles)) / (max(roles) - min(roles)+.001) * (2-1)+1)**0.5
 
     first_pick_df = enemy_role_reqs[['Hero Name', 'First Pick']]
     rrunning_stats = pd.merge(rrunning_stats, first_pick_df, on='Hero Name')
